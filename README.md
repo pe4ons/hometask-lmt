@@ -108,7 +108,33 @@ From logs:
 
 ---
 
-## Feedback for improvments
+Bug ID: 2
+
+Title: Backend returns error 500 when searching for deleted observation IDs using `/api/observation/{observation_id}` endpoint
+
+Env:
+  1. OS: Windows 11
+  2. Browser: Version 1.78.102 Chromium: 136.0.7103.113 (Official Build) (64-bit)
+
+Nots:
+  Format for observation id "7e7fbc4f-d1b8-42aa-8418-bf6cee8c9b84"
+
+Steps to reproduce:
+  1. Open API endpoint http://localhost:8000/docs#/Observations/list_observations_json_api_observation__observation_id__get
+  2. Enter deleted observation ID
+  3. Click the `Execute` button
+  4. Check response body
+
+Expected result: Exception is handled and returns error 404.
+
+Actual result: When GET request is sent, error 500 is returned.
+
+Image: 
+
+![image](https://github.com/user-attachments/assets/9edb09a8-a976-4fc8-b4d6-109bc1c3cbdc)
+
+
+## Feedback for improvments and observations
 
 Observation form could use a few UI/UX improvements:
    1. Display `*` symbol for required input field.
@@ -119,4 +145,4 @@ Observation form could use a few UI/UX improvements:
 
   1. Using `pnpm` for the project. `pnpm` can be installed using `npm` https://pnpm.io/installation#using-npm
   2. Run `pnpm install`.
-  3. To run test `pnpm exec playwright test {{filename}} --headed`.
+  3. To run test `pnpm exec playwright test {filename} --headed`.
