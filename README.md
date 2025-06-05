@@ -119,5 +119,4 @@ Observation form could use a few UI/UX improvements:
 
   1. Using `pnpm` for the project. `pnpm` can be installed using `npm` https://pnpm.io/installation#using-npm
   2. Run `pnpm install`.
-  3. Setup `.env` file (check `.env.example`) 
-  4. To run test `pnpm exec playwright test {{filename}} --headed`.
+  3. To run test `pnpm exec playwright test {{filename}} --headed`.
