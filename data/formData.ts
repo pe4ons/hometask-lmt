@@ -11,3 +11,11 @@ export const defaultInputData = {
     url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Supposed_UFO%2C_Passaic%2C_New_Jersey.jpg/500px-Supposed_UFO%2C_Passaic%2C_New_Jersey.jpg',
     description: 'this is description'
 }
+
+export const defaultApiData = {
+    id: '12345',
+    location: 'new observation from API',
+    date: '2025-04-01',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Supposed_UFO%2C_Passaic%2C_New_Jersey.jpg/500px-Supposed_UFO%2C_Passaic%2C_New_Jersey.jpg',
+    description: 'this is description'
+}
