@@ -1,4 +1,5 @@
 import { type Locator, type Page } from '@playwright/test'
+import { InputData, defaultInputData } from '../data/formData';
 
 export class ObservationPage {
     readonly newObservationToggle: Locator;
@@ -6,6 +7,7 @@ export class ObservationPage {
     readonly dateInput: Locator;
     readonly imageUrlInput: Locator;
     readonly descriptionInput: Locator;
+    readonly addBtn: Locator;
     readonly deleteBtn: Locator;
 
     constructor(private readonly page: Page) {
@@ -14,6 +16,7 @@ export class ObservationPage {
         this.dateInput = page.getByTestId('new-observation-date');
         this.imageUrlInput = page.getByTestId('new-observation-image-url');
         this.descriptionInput = page.getByTestId('new-observation-description');
+        this.addBtn = page.getByTestId('new-observation-add-button');
         this.deleteBtn = page.getByRole('button', { name: 'delete' });
     }
 
@@ -21,10 +24,10 @@ export class ObservationPage {
         await this.page.goto('http://localhost:8000/');
     }
 
-    async fillForm(location: string, date: string, imageUrl: string, description: string) {
-        await this.locationInput.fill(location);
-        await this.dateInput.fill(date);
-        await this.imageUrlInput.fill(imageUrl);
-        await this.descriptionInput.fill(description);
+    async fillForm(data: Partial<InputData> = defaultInputData) {
+        await this.locationInput.fill(data.location ?? defaultInputData.location);
+        await this.dateInput.fill(data.date ?? defaultInputData.date);
+        await this.imageUrlInput.fill(data.url ?? defaultInputData.url);
+        await this.descriptionInput.fill(data.description ?? defaultInputData.description);
     }
 }
