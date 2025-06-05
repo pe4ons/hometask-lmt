@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 import { ObservationPage } from '../page/observationPage';
-import { defaultInputData } from '../data/formData';
 
 test.describe('observation form', () => {
     test.beforeEach(async ({ page }) => {
