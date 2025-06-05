@@ -11,11 +11,11 @@ test.describe('observation form', () => {
 
     test('adding new observation', async ({ page }) => {
         const observationPage = new ObservationPage(page);
+        const randomLocation = Math.random().toString(32).substring(2);
 
-        await observationPage.fillForm();
+        await observationPage.fillForm({ location: randomLocation });
         await observationPage.addBtn.click();
-        const firstText = page.getByText(defaultInputData.location).first();
-        await expect(firstText).toBeVisible();
+        await expect(page.getByText(randomLocation)).toBeVisible();
     });
 
     test('delete observation', async ({ page }) => {
