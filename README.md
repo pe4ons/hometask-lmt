@@ -139,7 +139,7 @@ Image:
 Observation form could use a few UI/UX improvements:
    1. Display `*` symbol for required input field.
    2. Display validation errors for the `Location` input field after the Add button is clicked. As its limit is set from 3-100 characters.
-   3. While empty `Date` and `Image URL` input validation are handled by `/observations` request, the error is only visible in the browsers network tab. Displaying an error under the input field would better communicate the issue to the user.
+   3. While empty `Date` and `Image URL` input validation are handled by `/observations` endpoint, the error is only visible in the browsers network tab. Displaying an error under the input field would better communicate the issue to the user.
 
 # 3. Create automated tests using any tools, frameworks and languages you are comfortable with.
 
